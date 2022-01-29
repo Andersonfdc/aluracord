@@ -45,7 +45,7 @@ function Titulo(props){
  
 function PaginaInicial() {
     //const username = 'Andersonfdc';
-    const [username, setUsername]=React.useState('Andersonfdc');
+    const [username, setUsername]=React.useState('');
     const roteamento = useRouter();
 
     return (
@@ -80,7 +80,7 @@ function PaginaInicial() {
                 infosDoEvento.preventDefault();
                 console.log('Alguém submeteu o form');
                 
-                roteamento.push('/chat');
+                roteamento.push(`/chat?username=${username}`);
                 //window.location.href='/chat';
               }}
               styleSheet={{
@@ -109,7 +109,7 @@ function PaginaInicial() {
 
               <TextField
                 value={username}
-
+                placeholder='Usuário do Github'
                 onChange= {function Handler(event) {
                   console.log('Usuário Digitou',event.target.value);
 
