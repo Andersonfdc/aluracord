@@ -158,7 +158,7 @@ export default function ChatPage() {
                         />
                         <ButtonSendSticker
                             onStickerClick = {(sticker) =>{
-                                handleNovaMensagem(`:sticker: ${sticker}`);
+                                handleNovaMensagem(':sticker: ' + sticker);
                             }}
                         />
                     </Box>
@@ -246,7 +246,7 @@ function MessageList(props) {
 
                         {mensagem.texto.startsWith(':sticker:')
                             ?(
-                                <image src={mensagem.texto.replace(':sticker:', '')}/>
+                                <Image src={mensagem.texto.replace(':sticker:', '')}/>
                             )
                             : (
                                 mensagem.texto
